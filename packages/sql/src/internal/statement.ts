@@ -88,7 +88,7 @@ export class StatementPrimitive<A> extends Effectable.Class<ReadonlyArray<A>, Er
   ): Effect.Effect<XA, E | Error.SqlError> {
     return Effect.useSpan(
       "sql.execute",
-      { kind: "client" },
+      { kind: "client", captureStackTrace: false },
       (span) =>
         Effect.withFiberRuntime((fiber) => {
           const transform = fiber.getFiberRef(currentTransformer)
@@ -115,7 +115,7 @@ export class StatementPrimitive<A> extends Effectable.Class<ReadonlyArray<A>, Er
 
   get stream(): Stream.Stream<A, Error.SqlError> {
     return Stream.unwrapScoped(Effect.flatMap(
-      Effect.makeSpanScoped("sql.execute", { kind: "client" }),
+      Effect.makeSpanScoped("sql.execute", { kind: "client", captureStackTrace: false }),
       (span) =>
         Effect.withFiberRuntime<Stream.Stream<A, Error.SqlError>, Error.SqlError, Scope>((fiber) => {
           const transform = fiber.getFiberRef(currentTransformer)
