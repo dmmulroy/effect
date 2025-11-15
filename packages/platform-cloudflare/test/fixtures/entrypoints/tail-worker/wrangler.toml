@@ -1,0 +1,8 @@
+name = "test-tail-worker"
+main = "index.ts"
+compatibility_date = "2024-11-14"
+compatibility_flags = ["nodejs_compat"]
+
+# Tail consumer configuration
+# Note: Tail workers need to be configured via the Cloudflare dashboard
+# or wrangler CLI to consume logs from other workers

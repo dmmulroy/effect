@@ -5,6 +5,36 @@ import type * as Effect from "effect/Effect"
 import * as internal from "./internal/context.js"
 
 /**
+ * @since 1.0.0
+ * @category models
+ */
+export type CloudflareExecutionContext = internal.CloudflareExecutionContext
+
+/**
+ * @since 1.0.0
+ * @category models
+ */
+export type CloudflareScheduledController = internal.CloudflareScheduledController
+
+/**
+ * @since 1.0.0
+ * @category models
+ */
+export type CloudflareMessageBatch<Body = unknown> = internal.CloudflareMessageBatch<Body>
+
+/**
+ * @since 1.0.0
+ * @category models
+ */
+export type CloudflareForwardableEmailMessage = internal.CloudflareForwardableEmailMessage
+
+/**
+ * @since 1.0.0
+ * @category models
+ */
+export type CloudflareTailEvents = internal.CloudflareTailEvents
+
+/**
  * A tag for the Cloudflare Workers ExecutionContext.
  *
  * @since 1.0.0

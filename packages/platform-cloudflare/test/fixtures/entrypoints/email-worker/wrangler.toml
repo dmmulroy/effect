@@ -1,0 +1,12 @@
+name = "test-email-worker"
+main = "index.ts"
+compatibility_date = "2024-11-14"
+compatibility_flags = ["nodejs_compat"]
+
+# Email routing configuration
+[email]
+name = "test-email-worker"
+
+# Environment variables for testing
+[vars]
+ADMIN_EMAIL = "admin@example.com"

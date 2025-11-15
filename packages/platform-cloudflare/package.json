@@ -47,6 +47,9 @@
     "build-annotate": "babel build/esm --plugins annotate-pure-calls --out-dir build/esm --source-maps",
     "check": "tsc -b tsconfig.json",
     "test": "vitest",
+    "test:integration": "vitest --config vitest.integration.config.ts",
+    "test:watch": "vitest --watch",
+    "test:integration:watch": "vitest --config vitest.integration.config.ts --watch",
     "coverage": "vitest --coverage",
     "dev": "wrangler dev",
     "dev:remote": "wrangler dev --remote"
@@ -56,6 +59,7 @@
     "effect": "workspace:^"
   },
   "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.5.0",
     "@cloudflare/workers-types": "^4.20251109.0",
     "@effect/platform": "workspace:^",
     "effect": "workspace:^",

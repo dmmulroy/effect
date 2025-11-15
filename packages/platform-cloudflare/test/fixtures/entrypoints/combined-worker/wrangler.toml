@@ -1,0 +1,19 @@
+name = "test-combined-worker"
+main = "index.ts"
+compatibility_date = "2024-11-14"
+compatibility_flags = ["nodejs_compat"]
+
+# Cron triggers for scheduled handler
+[triggers]
+crons = ["0 * * * *"]
+
+# Queue consumer configuration
+[[queues.consumers]]
+queue = "orders"
+max_batch_size = 10
+max_batch_timeout = 30
+
+# Queue producer binding for testing
+[[queues.producers]]
+queue = "orders"
+binding = "ORDERS_QUEUE"

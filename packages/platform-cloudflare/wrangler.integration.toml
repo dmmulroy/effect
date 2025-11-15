@@ -1,0 +1,35 @@
+name = "effect-platform-cloudflare-integration-test"
+main = "test/fixtures/entrypoints/combined-worker/index.ts"
+compatibility_date = "2024-11-14"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+ENVIRONMENT = "test"
+TEST_VAR = "integration-test-value"
+API_URL = "https://api.test.example.com"
+
+# Queue bindings for integration tests
+[[queues.producers]]
+queue = "test-queue"
+binding = "TEST_QUEUE"
+
+[[queues.consumers]]
+queue = "test-queue"
+max_batch_size = 10
+max_batch_timeout = 30
+
+# KV namespace for integration tests (optional - would need real namespace)
+# [[kv_namespaces]]
+# binding = "TEST_KV"
+# id = "test-kv-namespace-id"
+
+# R2 bucket for integration tests (optional - would need real bucket)
+# [[r2_buckets]]
+# binding = "TEST_BUCKET"
+# bucket_name = "test-bucket"
+
+# D1 database for integration tests (optional - would need real database)
+# [[d1_databases]]
+# binding = "TEST_DB"
+# database_name = "test-db"
+# database_id = "test-db-id"
