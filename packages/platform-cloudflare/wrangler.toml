@@ -1,0 +1,9 @@
+name = "effect-platform-cloudflare-test"
+main = "test/fixtures/example-worker/index.ts"
+compatibility_date = "2025-11-14"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+ENVIRONMENT = "development"
+TEST_VAR = "test-value-from-wrangler"
+API_URL = "https://api.example.com"
